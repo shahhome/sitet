@@ -1,0 +1,43 @@
+<template>
+    <lightning-card class="align-center" title="Ice Cream Sales Table" variant="outlined">
+      <div class="slds-p-horizontal_small">
+        <c-utility-combo
+            label="Select City"
+            options={cityOptions}
+            selected-option={selectedCity}
+            onoptionchange={handleCityChange}
+        ></c-utility-combo>
+      </div>
+      <hr class="slds-m-top_small slds-m-bottom_small">
+      <div class="slds-p-horizontal_small">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+          <thead>
+            <tr class="slds-line-height_reset">
+              <th class="slds-text-title_caps align-center">Store Name</th>
+              <th class="slds-text-title_caps align-center">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <template for:each={paginatedSales} for:item="sale">
+              <tr key={sale.Id}>
+                <td>{sale.Store__r.Name}</td>
+                <td class="align-right">{sale.Amount}</td>
+              </tr>
+            </template>
+            <tr>
+              <td><strong>Total Sales</strong></td>
+              <td class="align-right"><strong>{totalSales}</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="slds-align_absolute-center">
+            <c-utility-pagination
+                disable-previous-button={disablePreviousButton}
+                disable-next-button={disableNextButton}
+                onpreviouspage={handlePreviousPage}
+                onnextpage={handleNextPage}
+          ></c-utility-pagination>
+        </div>
+      </div>
+    </lightning-card>
+  </template>

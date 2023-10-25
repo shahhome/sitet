@@ -1,0 +1,21 @@
+<!-- utilityPagination.html -->
+<template>
+    <div class="slds-align_absolute-center">
+      <lightning-button-group>
+        <lightning-button-icon
+          icon-name="utility:chevronleft"
+          name="previousButton"
+          disabled={disablePreviousButton}
+          onclick={handlePreviousPage}
+          alternative-text="Previous"
+        ></lightning-button-icon>
+        <lightning-button-icon
+          icon-name="utility:chevronright"
+          disabled={disableNextButton}
+          onclick={handleNextPage}
+          alternative-text="Next"
+        ></lightning-button-icon>
+      </lightning-button-group>
+    </div>
+  </template>
+  

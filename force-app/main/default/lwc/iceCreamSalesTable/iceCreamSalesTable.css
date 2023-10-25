@@ -1,0 +1,11 @@
+.align-right {
+    text-align: right;
+  }
+
+.align-center {
+    text-align: center;
+}
+
+.custom-combobox-label .slds-form-element__label {
+    font-weight: bold;
+}

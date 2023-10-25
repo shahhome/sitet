@@ -1,0 +1,12 @@
+<!-- utilityCombo.html -->
+<template>
+    <div>
+        <label class="custom-combobox-label slds-form-element__label">{label}</label>
+        <lightning-combobox
+            options={options}
+            value={selectedOption}
+            onchange={handleOptionChange}
+            variant="label-hidden"
+        ></lightning-combobox>
+    </div>
+</template>
